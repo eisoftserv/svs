@@ -2,6 +2,7 @@
 
 import Dash from './Components/Dash.svelte';
 import Stuffs from './Components/Stuffs.svelte';
+import Members from './Components/Members.svelte';
 import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
 const whoami = "App";
 
@@ -31,12 +32,16 @@ afterUpdate(() => {
 <body>
 	<div>
 		<br />
-		<button on:click={() => (ui_status === "dash") ? ui_status = "stuffs" : ui_status = "dash"} >toggle</button>
+		<button on:click={() => {if (ui_status !== 'dash') ui_status = 'dash';}} >Dash</button>
+		<button on:click={() => {if (ui_status !== 'stuffs') ui_status = 'stuffs';}} >Stuffs</button>
+		<button on:click={() => {if (ui_status !== 'members') ui_status = 'members';}} >Members</button>
 		<br />
 	</div>
 
 	{#if ui_status === 'stuffs'}
 		<Stuffs listTitle={"My List"} />
+	{:else if ui_status === 'members'}
+		<Members />
 	{:else}
 		<Dash dashTitle={"My Dash"} />
 	{/if}
