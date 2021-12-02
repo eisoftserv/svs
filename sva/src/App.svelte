@@ -2,11 +2,17 @@
 
 import Dash from './Components/Dash.svelte';
 import Stuffs from './Components/Stuffs.svelte';
-import Members from './Components/Members.svelte';
-import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+//import Members from './Components/Members.svelte';
+import MembersSplit from './Components/MembersSplit.svelte';
+import { onMount, onDestroy, beforeUpdate, afterUpdate, setContext } from 'svelte';
 const whoami = "App";
 
 export let ui_status = 'dash';
+
+const testFunc = (x, y) => (x + y);
+const testVal = 'data sent from App';
+setContext('testFunc', testFunc);
+setContext('testVal', testVal);
 
 onMount(() => {
 	console.log(`mount ${whoami} status ${ui_status}`);
@@ -41,7 +47,10 @@ afterUpdate(() => {
 	{#if ui_status === 'stuffs'}
 		<Stuffs listTitle={"My List"} />
 	{:else if ui_status === 'members'}
-		<Members />
+		<!--         
+			<Members />
+		-->
+		<MembersSplit />
 	{:else}
 		<Dash dashTitle={"My Dash"} />
 	{/if}

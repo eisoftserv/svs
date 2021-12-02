@@ -12,7 +12,7 @@
     {#each items as item}
         <p>
             <span>{item.id} </span>
-            <span id={'s_'+item.id} on:click={ (e) => {
+            <span on:click={ (e) => {
                 isEditing = 'editing';
                 updates = {...item};
                 //console.log(updates);

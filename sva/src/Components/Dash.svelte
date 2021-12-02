@@ -24,11 +24,10 @@ afterUpdate(() => {
     console.log(`after update ${whoami} - ${dashTitle}`)
 });
     
-</script>
-    
+</script>  
 
 <div>
-    <h2>Short Title goes here</h2>
+    <h2>Hello Newbies!</h2>
     <br />
     <img src="./images/dash450.png" alt="dash image" />
     <br />
