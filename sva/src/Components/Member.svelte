@@ -8,6 +8,7 @@
     export let doDelete;
     export let doUpdate;
     export let doInsert;
+    export let doAppend;
     export let doClose;
 
     const testFunc = getContext('testFunc');
@@ -30,6 +31,9 @@
         <button on:click={() => doClose()}> Cancel </button>
     {:else if isEditing === "inserting"}
         <button on:click={() => doInsert({name:'test', total:2.5, bio:'about test'})}> Submit </button>
+        <button on:click={() => doClose()}> Cancel </button>
+        {:else if isEditing === "appending"}
+        <button on:click={() => doAppend({name:'test', total:2.5, bio:'about test'})}> Submit </button>
         <button on:click={() => doClose()}> Cancel </button>
     {/if}
 

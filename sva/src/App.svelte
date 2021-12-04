@@ -2,8 +2,7 @@
 
 import Dash from './Components/Dash.svelte';
 import Stuffs from './Components/Stuffs.svelte';
-//import Members from './Components/Members.svelte';
-import MembersSplit from './Components/MembersSplit.svelte';
+import Members from './Components/Members.svelte';
 import { onMount, onDestroy, beforeUpdate, afterUpdate, setContext } from 'svelte';
 const whoami = "App";
 
@@ -45,12 +44,9 @@ afterUpdate(() => {
 	</div>
 
 	{#if ui_status === 'stuffs'}
-		<Stuffs listTitle={"My List"} />
+		<Stuffs listTitle={"Stuff List"} />
 	{:else if ui_status === 'members'}
-		<!--         
-			<Members />
-		-->
-		<MembersSplit />
+		<Members />
 	{:else}
 		<Dash dashTitle={"My Dash"} />
 	{/if}
