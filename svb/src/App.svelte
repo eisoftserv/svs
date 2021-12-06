@@ -13,13 +13,13 @@
 
     <ul>
         <li>
-            <a href="/Landing" use:link>landing</a>
+            <a href="/Landing" use:link> Landing </a>
         </li>
         <li>
-            <a href="/About" use:link>About</a>
+            <a href="/About" use:link> About </a>
         </li>
         <li>
-            <a href="/Contact" use:link>Contact</a>
+            <a href="/Contact" use:link > Contact </a>
         </li>
     </ul>	
 

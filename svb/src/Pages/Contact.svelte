@@ -19,5 +19,5 @@
 {/each}
 
 <br />
-<a href="/ContactUpdate" use:link target='_blank'>Update the Contact list</a>
+<a href="/ContactUpdate" use:link >Update the Contact list</a>
 <br />
