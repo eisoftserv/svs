@@ -7,14 +7,8 @@ import {pop, push, replace} from "svelte-spa-router";
 
 <br />
 <p>
-    <button on:click={() => pop()} >backwards</button>
-</p>
-<br />
-<p>
-    <button on:click={() => push("/About")} >push About</button>
-</p>
-<br />
-<p>
-    <button on:click={() => replace("/Contact")} >replace Contact</button>
+    <button on:click={() => pop()} > Backwards </button>
+    <button on:click={() => push("/About")} > push About </button>
+    <button on:click={() => replace("/Contact")} > replace Contact </button>
 </p>
 

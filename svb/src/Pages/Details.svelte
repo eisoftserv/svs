@@ -1,5 +1,5 @@
 <script>
-    import {pop} from "svelte-spa-router";
+    import {pop, link} from "svelte-spa-router";
     export let params = {};
 </script>
 
@@ -12,3 +12,8 @@
 <br>
 <p>my text is: {params.mytext}</p>
 <p>my number is: {params.mynumber}</p>
+
+<br />
+<a href="/ContactUpdate" use:link target='_blank'>Update the Contact list</a>
+<br />
+

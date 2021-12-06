@@ -1,18 +1,25 @@
 <script>
-	import Router, {link, push} from "svelte-spa-router";
+	import Router, {link, push, replace} from "svelte-spa-router";
 	import {routes} from "./routes";
-	push("/Landing");
+    export let just_landed = true;
+
+    if (just_landed === true) {
+        just_landed = false;
+        replace('/Landing');
+    } else { 
+        push('/Landing'); 
+    }
 </script>
 
     <ul>
         <li>
-            <a href="/Landing" use:link>landing page</a>
+            <a href="/Landing" use:link>landing</a>
         </li>
         <li>
-            <a href="/About" use:link>about us</a>
+            <a href="/About" use:link>About</a>
         </li>
         <li>
-            <a href="/Contact" use:link>contact us</a>
+            <a href="/Contact" use:link>Contact</a>
         </li>
     </ul>	
 
