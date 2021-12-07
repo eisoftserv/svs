@@ -1,6 +1,7 @@
 <script>
     import Member from './Member.svelte';
     import itemsList from "../members.js";
+    import { fade, fly, scale } from 'svelte/transition';
 
     let items = [...itemsList];
     let isEditing = 'no';
@@ -49,11 +50,14 @@
 
 <div>
     <br />
-    <h3>Member List</h3>
+    <h3 >Member List</h3>
+    <p>
+        Note: this page includes transitions
+    </p>
     <br />
 
-    {#each items as item (item.id)}
-        <p>
+    {#each items as item, cnt (item.id)}
+        <p in:fade={{delay:200*cnt, duration:200 }}>
             <span>{item.id} </span>
             <span class="eis_link" on:click={ (e) => {
                 isEditing = 'editing';
@@ -68,8 +72,10 @@
     {/each}    
 
     <br />
-        <button on:click={() => {isEditing = 'inserting'}}> Insert... </button>
-        <button on:click={() => {isEditing = 'appending'}}> Append... </button>
+    <div in:fly={{delay:1600, x:-400, y:-400}}>
+        <button on:click={() => {isEditing = 'inserting'}} in:scale={{delay:1600, duration:1200, start:0.5}}> Insert... </button>
+        <button on:click={() => {isEditing = 'appending'}} in:scale={{delay:1600, duration:1200, start:2}}> Append... </button>
+    </div>
     <br />
 
     {#if isEditing === 'editing'}
